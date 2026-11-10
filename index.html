@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#090d17">
+  <title>Bell Warden — Hollow Vale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell" aria-label="Bell Warden boss fight">
+    <canvas id="game" aria-label="A 2D boss fight. Move, jump, dash and slash to defeat the Bell Warden."></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Hollow Vale home"><span class="sigil">✦</span><span>HOLLOW <b>VALE</b></span></a>
+      <div class="chapter">THE SUNKEN CHAPEL <i>·</i> I</div>
+      <button class="sound-button" id="soundButton" aria-label="Toggle sound"><span id="soundIcon">♫</span><small>SOUND</small></button>
+    </header>
+    <section class="hud" aria-label="Fight status">
+      <div class="hero-status">
+        <div class="health-row" id="playerHealth" aria-label="Knight health"></div>
+        <div class="status-caption"><span>VESSEL</span><span class="soul-label">SOUL <i id="soulCount">0</i></span></div>
+        <div class="soul-track"><i id="soulFill"></i></div>
+      </div>
+      <div class="boss-status">
+        <div class="boss-heading"><span>THE BELL WARDEN</span><span class="boss-rank">VIGILANT <b>✦</b></span></div>
+        <div class="boss-bar"><i id="bossHealth"></i><span id="bossPips"></span></div>
+      </div>
+    </section>
+    <div class="arena-label"><span class="label-line"></span><span>CHAPEL OF THE LAST TOLL</span><span class="label-line"></span></div>
+    <div class="fight-hint" id="fightHint"><kbd>J</kbd> STRIKE <span>·</span> <kbd>SPACE</kbd> JUMP <span>·</span> <kbd>K</kbd> DASH</div>
+    <section class="overlay intro" id="intro">
+      <div class="overlay-card">
+        <div class="ornament">✧ &nbsp; ✦ &nbsp; ✧</div>
+        <p class="eyebrow">A HOLLOW VALE TALE</p>
+        <h1>THE<br><em>BELL WARDEN</em></h1>
+        <p class="intro-copy">A forgotten sentinel stirs beneath the chapel.<br>Silence the bell. Find your way out.</p>
+        <button class="primary-button" id="startButton">ENTER THE CHAPEL <span>→</span></button>
+        <p class="control-note">A / D MOVE &nbsp; · &nbsp; SPACE JUMP &nbsp; · &nbsp; J STRIKE &nbsp; · &nbsp; K DASH</p>
+      </div>
+    </section>
+    <section class="overlay result hidden" id="result">
+      <div class="overlay-card result-card">
+        <div class="ornament" id="resultOrnament">✦</div>
+        <p class="eyebrow" id="resultEyebrow">THE TOLL IS PAID</p>
+        <h2 id="resultTitle">THE CHAPEL<br><em>IS QUIET</em></h2>
+        <p class="intro-copy" id="resultCopy">The old bell falls silent. The dark remembers.</p>
+        <button class="primary-button" id="restartButton">RETURN TO THE CHAPEL <span>↻</span></button>
+      </div>
+    </section>
+    <div class="mobile-controls" aria-label="Touch controls">
+      <div class="move-controls"><button data-control="left" aria-label="Move left">‹</button><button data-control="right" aria-label="Move right">›</button></div>
+      <div class="action-controls"><button data-control="jump" aria-label="Jump">↑</button><button data-control="dash" aria-label="Dash">✧</button><button data-control="attack" aria-label="Strike">⚔</button></div>
+    </div>
+    <footer class="bottom-note"><span>✦</span> A SMALL KNIGHT IN A VERY LARGE WORLD <span>✦</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
